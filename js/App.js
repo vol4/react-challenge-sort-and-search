@@ -5,33 +5,6 @@ import ToolBar from './components/ToolBar';
 import UserList from './components/UserList';
 import ActiveUser from './components/ActiveUser';
 
-var users_test = [
-    {
-        "id": 0,
-        "name": "Chad Snyder",
-        "age": 28,
-        "phone": "(629) 653-9041",
-        "image": "owl",
-        "phrase": "Owmeco jen be tezpoksim vojuz..."
-    },
-    {
-        "id": 1,
-        "name": "Vasya",
-        "age": 15,
-        "phone": "(629) 78-987",
-        "image": "owl",
-        "phrase": "My be..."
-    },
-    {
-        "id": 2,
-        "name": "asha",
-        "age": 20,
-        "phone": "(629) 78-987",
-        "image": "owl",
-        "phrase": "My be..."
-    }
-];
-
 export default class App extends Component {
     constructor(props) {
         super(props);
@@ -44,7 +17,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        fetch('/data.json')
+        fetch('data.json')
             .then((response) => response.json())
             .then((responseJson) => {
                 this.setState({
