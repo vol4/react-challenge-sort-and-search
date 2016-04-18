@@ -37,7 +37,7 @@ export default class App extends Component {
     }
 
     filterUsers(query) {
-        var usersFilter = _.filter(this.state.users, function(user){ return user.name.indexOf(query) != -1; });
+        var usersFilter = _.filter(this.state.users, function(user){ return user.name.toLowerCase().indexOf(query.toLowerCase()) != -1; });
         var activeUserId = (!_.isEmpty(usersFilter)) ? usersFilter[0].id : 0;
         this.setState({
             query: query,
